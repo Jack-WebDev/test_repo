@@ -19,7 +19,15 @@
 .logo {
 	position: absolute;
 	top: 1rem;
-	left: 2rem;
+	left: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+	.logo {
+		top: 1rem;
+		left: 2rem;
+	}
+	
 }
 
 .form_img {
@@ -50,8 +58,14 @@
 .form__container {
 	border: 2px solid #dda83a;
 	border-radius: 20px;
-	padding: 4rem;
+	padding: 2rem;
 	background-color: #fafafa;
+}
+
+@media screen  and (min-width:768px){
+	.form__container {
+		padding: 4rem;
+	}
 }
 
 input {

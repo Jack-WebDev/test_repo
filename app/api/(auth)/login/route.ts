@@ -9,11 +9,15 @@ dotenv.config();
 
 import users from "@/database/users.json";
 
+type User = {
+	email:string
+}
+
 export async function POST(req: NextRequest, res: NextResponse) {
 	try {
 		const data = await req.json();
 		// const { email, password } = await data;
-		const { email } = await data;
+		const { email }:User = await data;
 
 		if (!isValidEmailDomain(email, "ndt.co.za")) {
 			return NextResponse.json({
@@ -21,12 +25,14 @@ export async function POST(req: NextRequest, res: NextResponse) {
 			});
 		}
 
+		
+
 		// const user = await db.user.findFirst({
 		// 	where: {
 		// 		Email: email,
 		// 	},
 		// });
-		const user = users.find((u) => u.Email === email);
+		const user = users.find((u) => u.Email === email.toLowerCase());
 
 		if (user) {
 			console.log("Email found:", email);
