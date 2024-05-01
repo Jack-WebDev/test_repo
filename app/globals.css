@@ -3,31 +3,135 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--primary-color: #dda83a;
+	--secondary-color: #015a4a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.link.active {
+	color: var(--primary-color);
+	font-weight: 600;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.side_menu {
+	grid-template-rows: 0.3fr 1fr;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.logo {
+	position: absolute;
+	top: 1rem;
+	left: 2rem;
+}
+
+.form_img {
+	width: 100%;
+}
+
+.tabs__header {
+	background-color: rgba(221, 167, 58, 0.3);
+	border-radius: 3rem;
+}
+
+.tabs__header .login_tab[data-state="active"],
+.tabs__header .register_tab[data-state="active"] {
+	border: none;
+	background-color: #dda83a;
+	border-radius: 4rem;
+	color: #fff;
+}
+
+.login_btn,
+.register_btn {
+	background-color: #dda83a;
+	color: #fff;
+	border: none;
+	border-radius: 0.5rem;
+}
+
+.form__container {
+	border: 2px solid #dda83a;
+	border-radius: 20px;
+	padding: 4rem;
+	background-color: #fafafa;
+}
+
+input {
+	border-radius: 2rem;
+}
+
+.filter_input {
+	border: 1px solid #000;
+}
+
+.left__column {
+	width: 50%;
+}
+
+.date-range-selector {
+	display: flex;
+	justify-content: center;
+}
+
+.date-range-selector button span::before {
+	border-color: var(--primary-color);
+}
+
+.react-datepicker__month-container
+	.react-datepicker__month
+	.react-datepicker__week
+	.react-datepicker__day--keyboard-selected {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.react-datepicker__month-container
+	.react-datepicker__month
+	.react-datepicker__week
+	.react-datepicker__day--in-range {
+	background-color: var(--secondary-color);
+	color: #fff;
+}
+
+div[role="dialog"] {
+	background-color: white;
+	border-radius: 10px;
+}
+
+select {
+	width: 14vw;
+	border: 1px solid;
+	border-radius: 10px;
+	padding-inline: 10px;
+	height: 120%;
+}
+
+.project_dropdown {
+	width: 13%;
+}
+
+.task_input {
+	width: 15%;
+}
+
+.task_input:focus {
+	border: none;
+	outline: 2px solid var(--primary-color);
+}
+
+.hour_input:focus {
+	border: none;
+	outline: 2px solid var(--primary-color);
+}
+
+.project-card {
+	width: 70%;
+}
+
+.background__image {
+	color: transparent;
+	width: 50%;
+	position: absolute;
+	top: 15%;
+	left: 37%;
+	z-index: -4;
+	filter: opacity(0.2);
 }
